@@ -1,0 +1,355 @@
+/* ==============================================================
+   Forton Lab — landing styles
+   Палитра: тёмно-коричневый премиум + золото
+   ============================================================== */
+
+:root {
+  --bg-base: #1A0F08;
+  --bg-deep: #0F0805;
+  --bg-card: #2A1D10;
+  --border: #3D2A18;
+  --gold: #D4A640;
+  --gold-bright: #F4C757;
+  --gold-dark: #8B6F2D;
+  --gold-mid: #B58A3C;
+  --text: #E8E0D0;
+  --text-muted: #A89878;
+
+  --gold-linear: linear-gradient(135deg, #8B6F2D 0%, #F4C757 50%, #B58A3C 100%);
+
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ----- Reset ----- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg-base);
+  background-image: radial-gradient(
+    ellipse at center,
+    var(--bg-card) 0%,
+    var(--bg-base) 70%,
+    var(--bg-deep) 100%
+  );
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+main {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ----- Gold linear text helper ----- */
+
+.gold-text {
+  background: var(--gold-linear);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================================
+   1. Hero
+   ============================================================ */
+
+.hero {
+  min-height: min(100vh, 800px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0;
+  gap: 48px;
+}
+
+.hero__seal {
+  width: min(360px, 70vw);
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(212, 166, 64, 0.08));
+}
+
+.hero__mission {
+  max-width: 560px;
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   2-3. Products
+   ============================================================ */
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.product:hover {
+  box-shadow: 0 0 24px rgba(212, 166, 64, 0.12);
+  border-color: rgba(212, 166, 64, 0.35);
+  transform: translateY(-2px);
+}
+
+.product--right {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.product__icon-wrap {
+  flex: 0 0 auto;
+}
+
+.product__icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 22%;
+  display: block;
+}
+
+.product__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.product--right .product__body {
+  align-items: flex-end;
+}
+
+.product__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  background: var(--gold-linear);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.product__tagline {
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.product__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  align-self: flex-start;
+}
+
+.product--right .product__cta {
+  align-self: flex-end;
+}
+
+.product__cta:hover,
+.product__cta:focus-visible {
+  background: rgba(212, 166, 64, 0.08);
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  outline: none;
+}
+
+.product__cta:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   4. Soon
+   ============================================================ */
+
+.soon {
+  text-align: center;
+  padding: 70px 0;
+}
+
+.soon p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   5. Footer
+   ============================================================ */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 0 60px;
+}
+
+.footer__divider {
+  width: 240px;
+  height: 1px;
+  background: var(--border);
+}
+
+.footer__channels {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--gold);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--gold-bright);
+  background: rgba(212, 166, 64, 0.06);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.footer__link:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+.footer__copy {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Responsive — единственный брейкпоинт 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  main {
+    padding: 0 20px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 80px 0 60px;
+    gap: 36px;
+  }
+
+  .hero__seal {
+    width: min(280px, 75vw);
+  }
+
+  .products {
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .product,
+  .product--right {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 24px;
+  }
+
+  .product--right .product__body,
+  .product__body {
+    align-items: center;
+  }
+
+  .product__cta,
+  .product--right .product__cta {
+    align-self: center;
+  }
+
+  .soon {
+    padding: 48px 0;
+  }
+
+  .soon p {
+    font-size: 16px;
+  }
+
+  .footer {
+    padding: 32px 0 48px;
+  }
+
+  .footer__channels {
+    gap: 24px;
+  }
+
+}
