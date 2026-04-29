@@ -142,13 +142,16 @@ main {
 .hero__mission::before {
   content: "";
   display: block;
-  width: 80px;
+  width: clamp(200px, 38vw, 360px);
   height: 1px;
-  margin: 0 auto 22px;
+  margin: 0 auto 28px;
   background: linear-gradient(90deg,
     rgba(212, 166, 64, 0) 0%,
-    rgba(244, 199, 87, 0.7) 50%,
+    rgba(212, 166, 64, 0.5) 20%,
+    rgba(244, 199, 87, 1) 50%,
+    rgba(212, 166, 64, 0.5) 80%,
     rgba(212, 166, 64, 0) 100%);
+  box-shadow: 0 0 8px rgba(244, 199, 87, 0.4);
 }
 
 /* ============================================================
@@ -363,8 +366,8 @@ main {
   }
 
   .hero__mission::before {
-    width: 60px;
-    margin-bottom: 18px;
+    width: clamp(160px, 60vw, 240px);
+    margin-bottom: 20px;
   }
 
   .products {
