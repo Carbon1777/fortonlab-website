@@ -271,7 +271,7 @@ main {
 
 .soon {
   text-align: center;
-  padding: 70px 0;
+  padding: 60px 0 16px;
 }
 
 .soon p {
@@ -291,7 +291,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 40px 0 60px;
+  padding: 12px 0 60px;
 }
 
 .footer__divider {
@@ -400,7 +400,7 @@ main {
   }
 
   .soon {
-    padding: 48px 0;
+    padding: 40px 0 12px;
   }
 
   .soon p {
@@ -408,7 +408,7 @@ main {
   }
 
   .footer {
-    padding: 32px 0 48px;
+    padding: 8px 0 48px;
   }
 
   .footer__channels {
