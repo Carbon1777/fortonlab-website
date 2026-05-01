@@ -335,6 +335,29 @@ main {
   outline-offset: 2px;
 }
 
+.footer__email {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer__email:hover,
+.footer__email:focus-visible {
+  color: var(--gold-bright);
+  border-bottom-color: rgba(244, 199, 87, 0.5);
+  outline: none;
+}
+
+.footer__email:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .footer__copy {
   font-size: 12px;
   color: var(--text-muted);
