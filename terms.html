@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Условия использования — Forton Lab</title>
+  <meta name="description" content="Условия использования сайта fortonlab.ru. Информационная витрина студии Forton Lab.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500&display=swap">
+
+  <style>
+    :root {
+      --bg-base: #1A0F08;
+      --bg-deep: #0F0805;
+      --bg-card: #2A1D10;
+      --border: #3D2A18;
+      --gold: #D4A640;
+      --gold-bright: #F4C757;
+      --gold-dark: #8B6F2D;
+      --gold-mid: #B58A3C;
+      --text: #E8E0D0;
+      --text-muted: #A89878;
+      --gold-linear: linear-gradient(135deg, #8B6F2D 0%, #F4C757 50%, #B58A3C 100%);
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--text);
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(244, 199, 87, 0.10) 0%, rgba(244, 199, 87, 0) 60%),
+        radial-gradient(ellipse 90% 60% at 50% 35%, rgba(212, 166, 64, 0.06) 0%, rgba(212, 166, 64, 0) 65%),
+        linear-gradient(180deg, #2A1D10 0%, #1A0F08 45%, #0F0805 100%);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      line-height: 1.65;
+    }
+    main {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-home {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 16px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-home:hover { color: var(--gold-bright); }
+    .lang-switch { font-size: 14px; color: var(--text-muted); }
+    .lang-switch a { color: var(--gold); text-decoration: none; margin-left: 8px; }
+    .lang-switch a:hover { color: var(--gold-bright); }
+    .lang-switch strong { color: var(--text); margin-left: 8px; }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: 0.04em;
+      background: var(--gold-linear);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold-dark);
+    }
+    .meta {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    p { margin-bottom: 12px; }
+    ul { margin: 8px 0 12px 24px; }
+    li { margin-bottom: 4px; }
+    a {
+      color: var(--gold-bright);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244, 199, 87, 0.3);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    .footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="nav-bar">
+      <a class="nav-home" href="/">FORTON LAB</a>
+      <div class="lang-switch"><strong>RU</strong> · <a href="/terms.en.html">EN</a></div>
+    </div>
+
+    <h1>Условия использования</h1>
+    <div class="meta">Дата вступления в силу: 9 мая 2026 г.</div>
+
+    <h2>1. О проекте</h2>
+    <p><strong>Forton Lab</strong> — независимая студия мобильных приложений. Сайт <a href="https://fortonlab.ru">fortonlab.ru</a> — информационная витрина проектов студии (Centry, Diktum и других). Сами приложения публикуются и распространяются через App Store, Google Play и RuStore — там действуют их собственные пользовательские соглашения (EULA).</p>
+
+    <h2>2. Использование сайта</h2>
+    <p>Контент сайта (тексты, дизайн, логотипы, печать FORTONLAB, графические материалы) принадлежит Forton Lab и охраняется законодательством РФ об интеллектуальной собственности. Использование без письменного разрешения правообладателя запрещено.</p>
+    <p>Сайт предоставляется «как есть». Forton Lab не гарантирует бесперебойную работу сайта и не несёт ответственности за временную недоступность.</p>
+
+    <h2>3. Контакты приложений</h2>
+    <p>За условиями использования и политикой конфиденциальности отдельных продуктов студии обращайтесь на их сайты:</p>
+    <ul>
+      <li>Centry: <a href="https://centryweb.ru">centryweb.ru</a> (полные Privacy / Terms / Community Rules)</li>
+      <li>Diktum: <a href="https://diktumweb.ru">diktumweb.ru</a> (полные Privacy / Terms / Children Safety)</li>
+    </ul>
+
+    <h2>4. Юрисдикция</h2>
+    <p>Применимое право — законодательство Российской Федерации. Все споры подлежат рассмотрению в судебных органах РФ по месту регистрации правообладателя.</p>
+
+    <h2>5. Контакт</h2>
+    <p>По общим вопросам: <a href="mailto:info@fortonlab.ru">info@fortonlab.ru</a></p>
+
+    <div class="footer">
+      <p>© 2026 Forton Lab · <a href="/">fortonlab.ru</a></p>
+    </div>
+  </main>
+</body>
+</html>

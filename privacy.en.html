@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Forton Lab</title>
+  <meta name="description" content="Forton Lab Privacy Policy. Use of Google API Services, data subject rights, contacts for GDPR requests.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500&display=swap">
+
+  <style>
+    :root {
+      --bg-base: #1A0F08;
+      --bg-deep: #0F0805;
+      --bg-card: #2A1D10;
+      --border: #3D2A18;
+      --gold: #D4A640;
+      --gold-bright: #F4C757;
+      --gold-dark: #8B6F2D;
+      --gold-mid: #B58A3C;
+      --text: #E8E0D0;
+      --text-muted: #A89878;
+      --gold-linear: linear-gradient(135deg, #8B6F2D 0%, #F4C757 50%, #B58A3C 100%);
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--text);
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(244, 199, 87, 0.10) 0%, rgba(244, 199, 87, 0) 60%),
+        radial-gradient(ellipse 90% 60% at 50% 35%, rgba(212, 166, 64, 0.06) 0%, rgba(212, 166, 64, 0) 65%),
+        linear-gradient(180deg, #2A1D10 0%, #1A0F08 45%, #0F0805 100%);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      line-height: 1.65;
+    }
+    main {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-home {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 16px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-home:hover { color: var(--gold-bright); }
+    .lang-switch { font-size: 14px; color: var(--text-muted); }
+    .lang-switch a { color: var(--gold); text-decoration: none; margin-left: 8px; }
+    .lang-switch a:hover { color: var(--gold-bright); }
+    .lang-switch strong { color: var(--text); margin-left: 8px; }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: 0.04em;
+      background: var(--gold-linear);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold-dark);
+    }
+    .meta {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    p { margin-bottom: 12px; }
+    ul { margin: 8px 0 12px 24px; }
+    li { margin-bottom: 4px; }
+    a {
+      color: var(--gold-bright);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244, 199, 87, 0.3);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    code {
+      background: var(--bg-card);
+      color: var(--gold-bright);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.9em;
+      border: 1px solid var(--border);
+    }
+    .important {
+      background: var(--bg-card);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .important p:last-child { margin-bottom: 0; }
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    .footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="nav-bar">
+      <a class="nav-home" href="/">FORTON LAB</a>
+      <div class="lang-switch"><strong>EN</strong> · <a href="/privacy">RU</a></div>
+    </div>
+
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      Effective Date: May 9, 2026<br>
+      Last Updated: May 9, 2026
+    </div>
+
+    <h2>1. Data Controller</h2>
+    <p>Data Controller: <strong>Forton Lab</strong> — independent mobile app studio (Russian Federation).</p>
+    <p>Contact for GDPR / 152-FZ requests: <a href="mailto:info@fortonlab.ru">info@fortonlab.ru</a> (please add «Privacy» to the subject line).</p>
+    <p>Website: <a href="https://fortonlab.ru">https://fortonlab.ru</a></p>
+
+    <h2>2. What Data the Site Collects</h2>
+    <p>The <code>fortonlab.ru</code> website is an informational landing page for the studio. We do NOT collect user registration data, do NOT process payments on the site, do NOT run identifying analytics.</p>
+    <p>Server logs (IP address, User-Agent, request time) are stored by our CDN provider Cloudflare for no more than 30 days (Cloudflare Free Tier standard).</p>
+    <p>Cookies: only Cloudflare service cookies for DDoS protection (e.g. <code>__cf_bm</code>). Analytical and advertising cookies are not used.</p>
+
+    <h2>3. Use of Google API Services</h2>
+    <div class="important">
+      <p>The automated publishing service <strong>Forton Lab Publisher</strong> uses YouTube Data API v3 (Google API Services) to upload studio video content to the YouTube channel <a href="https://youtube.com/@fortonlab">@fortonlab</a>, owned by the Forton Lab administrator. Use of data obtained from Google APIs is governed by the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including Limited Use requirements.</p>
+
+      <p><strong>What data is processed:</strong></p>
+      <ul>
+        <li>Refresh token and access token for YouTube Data API authorization</li>
+        <li>Metadata of published videos (title, description, tags, category)</li>
+      </ul>
+
+      <p><strong>Forton Lab Publisher does NOT:</strong></p>
+      <ul>
+        <li>access videos of other users</li>
+        <li>collect personal data of channel subscribers</li>
+        <li>share any data with third parties</li>
+        <li>use data for advertising, retargeting, or personalization</li>
+      </ul>
+
+      <p><strong>Token storage:</strong> the refresh token is stored in encrypted form in the studio repository's GitHub Secrets. Access is restricted to the studio administrator.</p>
+
+      <p><strong>Data deletion:</strong> requests to delete data processed through Google APIs can be sent to <a href="mailto:info@fortonlab.ru">info@fortonlab.ru</a>. Processing time — 14 days.</p>
+    </div>
+
+    <h2>4. Security</h2>
+    <p>Information is transmitted only over HTTPS. Google API access tokens are stored in protected GitHub Secrets and are not accessible to third parties. Repository access is restricted to the studio administrator and protected by two-factor authentication.</p>
+
+    <h2>5. Retention and Deletion</h2>
+    <p>The refresh token is retained indefinitely until revoked by the user (via <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>) or by the studio administrator.</p>
+    <p>Upon request to <a href="mailto:info@fortonlab.ru">info@fortonlab.ru</a>, data may be deleted within 14 days.</p>
+
+    <h2>6. Data Subject Rights (Russian Federal Law 152-FZ)</h2>
+    <p>In accordance with Russian Federal Law No. 152-FZ «On Personal Data», a data subject has the right:</p>
+    <ul>
+      <li>to access their personal data;</li>
+      <li>to correct inaccurate or incomplete data;</li>
+      <li>to deletion of personal data;</li>
+      <li>to withdraw consent for data processing;</li>
+      <li>to lodge a complaint with Roskomnadzor (the Russian supervisory authority for data protection).</li>
+    </ul>
+    <p>Contact for exercising rights: <a href="mailto:info@fortonlab.ru">info@fortonlab.ru</a> (please add «Privacy» to the subject line).</p>
+
+    <h2>7. Policy Changes</h2>
+    <p>Changes are communicated by updating the date on this page. Material changes are additionally published in the Telegram channel <a href="https://t.me/fortonlab">@fortonlab</a>.</p>
+
+    <div class="footer">
+      <p>© 2026 Forton Lab · <a href="/">fortonlab.ru</a></p>
+    </div>
+  </main>
+</body>
+</html>
