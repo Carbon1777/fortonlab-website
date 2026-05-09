@@ -358,6 +358,40 @@ main {
   border-radius: 2px;
 }
 
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.footer__legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer__legal a:hover,
+.footer__legal a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: rgba(212, 166, 64, 0.5);
+  outline: none;
+}
+
+.footer__legal a:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.footer__legal span {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
 .footer__copy {
   font-size: 12px;
   color: var(--text-muted);
