@@ -47,6 +47,33 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109268634" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika goals -->
+    <script>
+    (function() {
+      var rules = [
+      ["centryweb.ru", "click_app_centry"],
+      ["diktumweb.ru", "click_app_diktum"],
+      ["t.me/", "click_channel_tg"],
+      ["vk.com/", "click_channel_vk"],
+      ["youtube.com/", "click_channel_youtube"],
+      ["dzen.ru/", "click_channel_dzen"],
+      ["rutube.ru/", "click_channel_rutube"]
+      ];
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a || !window.ym) return;
+        var href = a.getAttribute('href') || '';
+        for (var i = 0; i < rules.length; i++) {
+          if (href.indexOf(rules[i][0]) !== -1) {
+            ym(109268634, 'reachGoal', rules[i][1]);
+            break;
+          }
+        }
+      }, true);
+    })();
+    </script>
+    <!-- /Yandex.Metrika goals -->
+
 </head>
 <body>
 
