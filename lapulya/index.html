@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лапуля — ежедневник здоровья кошки и собаки</title>
+  <meta name="description" content="Лапуля помнит за тебя, когда питомцу пора прививку, обработку от паразитов или к ветеринару. Личный календарь ухода и цифровой ветпаспорт для кошек и собак.">
+  <meta name="theme-color" content="#FFF8F0">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fortonlab.ru/lapulya/">
+  <meta property="og:title" content="Лапуля — ежедневник здоровья кошки и собаки">
+  <meta property="og:description" content="Личный календарь ухода и цифровой ветпаспорт для кошек и собак. Напоминает о прививках, обработках и визитах к ветеринару.">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png?v=2">
+
+  <!-- Yandex.Metrika counter (studio fortonlab) -->
+  <script type="text/javascript">
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();
+     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109268634", "ym");
+     ym(109268634, "init", {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109268634" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Yandex.Metrika goal: клик по стору на странице Лапули -->
+  <script>
+  (function() {
+    var rules = [
+      ["id6776284817", "click_app_lapulya"],
+      ["rustore.ru/catalog/app/ru.fortonlab.lapulya", "click_app_lapulya"]
+    ];
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !window.ym) return;
+      var href = a.getAttribute('href') || '';
+      for (var i = 0; i < rules.length; i++) {
+        if (href.indexOf(rules[i][0]) !== -1) { ym(109268634, 'reachGoal', rules[i][1]); break; }
+      }
+    }, true);
+  })();
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFF8F0;
+      --surface: #F5EFE6;
+      --accent: #8FBF9F;
+      --accent-deep: #5E9C72;
+      --text: #3D352C;
+      --text-muted: #7A7062;
+      --border: #E8DECE;
+      --radius: 18px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 0 20px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    main { max-width: 760px; margin: 0 auto; }
+
+    /* ---------- Hero ---------- */
+    .hero { text-align: center; padding: 56px 0 12px; }
+    .hero__icon {
+      width: 112px; height: 112px; margin: 0 auto 22px;
+      border-radius: 25%;
+      box-shadow: 0 12px 30px rgba(94, 156, 114, 0.18), 0 0 0 1px var(--border);
+    }
+    .hero__name {
+      font-size: clamp(34px, 7vw, 48px);
+      font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .hero__tagline {
+      font-size: clamp(17px, 2.4vw, 20px);
+      color: var(--text-muted); font-weight: 500;
+      max-width: 460px; margin: 0 auto 28px;
+    }
+
+    /* ---------- Store buttons ---------- */
+    .stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 10px; }
+    .store-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 22px; border-radius: 14px;
+      font-size: 16px; font-weight: 600; letter-spacing: 0.01em;
+      text-decoration: none; border: 1px solid transparent;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    .store-btn__icon { width: 20px; height: 20px; flex-shrink: 0; }
+    .store-btn__icon--rustore {
+      display: inline-block; background-color: currentColor;
+      -webkit-mask: url('assets/rustore.png') center/contain no-repeat;
+              mask: url('assets/rustore.png') center/contain no-repeat;
+    }
+    .store-btn--primary {
+      background: var(--accent-deep); color: #fff;
+      box-shadow: 0 8px 22px rgba(94, 156, 114, 0.28);
+    }
+    .store-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(94, 156, 114, 0.36); }
+    .store-btn--soon {
+      background: var(--surface); color: var(--text-muted);
+      border-color: var(--border); cursor: default; opacity: 0.85;
+    }
+    .stores__note {
+      font-size: 13px; color: var(--text-muted);
+      max-width: 380px; margin: 4px auto 26px; line-height: 1.5;
+    }
+
+    /* ---------- QR (web only) ---------- */
+    .qr-row { display: flex; justify-content: center; gap: 24px; margin: 6px 0 8px; }
+    .qr-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .qr-card__img {
+      width: 120px; height: 120px; padding: 8px;
+      background: #fff; border-radius: 14px; border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(94, 156, 114, 0.10);
+    }
+    .qr-card__cap { font-size: 12.5px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.02em; }
+
+    /* ---------- Content ---------- */
+    .section { padding: 40px 0; }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section__title { font-size: clamp(22px, 3.4vw, 28px); font-weight: 700; margin-bottom: 18px; letter-spacing: -0.01em; }
+    .lead { font-size: 18px; line-height: 1.65; margin-bottom: 16px; }
+    .lead:last-child { margin-bottom: 0; }
+    .lead strong { font-weight: 700; }
+
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 8px; }
+    .feature {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px;
+    }
+    .feature__dot {
+      flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%;
+      background: #F0F7F2; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px;
+    }
+    .feature__dot svg { width: 15px; height: 15px; color: var(--accent-deep); }
+    .feature__text { font-size: 15.5px; line-height: 1.5; }
+
+    .callout {
+      background: #F0F7F2; border: 1px solid #CFE6D8; border-radius: var(--radius);
+      padding: 20px 24px; margin-top: 8px; font-size: 15.5px; line-height: 1.6; color: var(--text-muted);
+    }
+    .callout strong { color: var(--text); }
+
+    /* ---------- Footer ---------- */
+    footer {
+      max-width: 760px; margin: 8px auto 0; padding: 36px 0 56px;
+      text-align: center; color: var(--text-muted); font-size: 14px; line-height: 1.7;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent-deep); text-decoration: none; border-bottom: 1px solid rgba(94,156,114,0.35); }
+    footer a:hover { border-bottom-color: var(--accent-deep); }
+    .footer__legal { margin: 10px 0 6px; }
+    .footer__legal .sep { margin: 0 8px; opacity: 0.45; }
+
+    @media (max-width: 768px) {
+      .qr-row { display: none; } /* QR — только в вебе/десктопе */
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; padding: 0 16px; }
+      .hero { padding: 40px 0 8px; }
+      .features { grid-template-columns: 1fr; }
+      .store-btn { flex: 1 1 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- Hero -->
+    <header class="hero">
+      <img class="hero__icon" src="/assets/lapulya-icon.png" alt="Лапуля" width="112" height="112">
+      <h1 class="hero__name">Лапуля</h1>
+      <p class="hero__tagline">Ежедневник здоровья кошки и собаки. Помнит за тебя, когда питомцу пора к&nbsp;ветеринару.</p>
+
+      <div class="stores" aria-label="Скачать в магазинах приложений">
+        <a class="store-btn store-btn--primary" href="https://apps.apple.com/ru/app/id6776284817" target="_blank" rel="noopener noreferrer">
+          <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          App&nbsp;Store
+        </a>
+        <a class="store-btn store-btn--primary" href="https://www.rustore.ru/catalog/app/ru.fortonlab.lapulya" target="_blank" rel="noopener noreferrer">
+          <span class="store-btn__icon store-btn__icon--rustore" aria-hidden="true"></span>
+          RuStore
+        </a>
+        <span class="store-btn store-btn--soon" role="img" aria-label="Google Play — скоро">
+          <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.5 2.7c-.3.3-.5.8-.5 1.4v15.8c0 .6.2 1.1.5 1.4l8.4-8.6-8.4-10zM14 12.7l2.6 2.6 3.4-1.9c1-.6 1-2.1 0-2.7l-3.4-1.9-2.6 3.9zM13.1 13.6l-8.1 8.3c.4.1.8 0 1.3-.2l8.7-4.9-1.9-3.2zM13.1 11.8l1.9-3.2-8.7-4.9c-.5-.3-.9-.3-1.3-.2l8.1 8.3z"/>
+          </svg>
+          Google&nbsp;Play
+        </span>
+      </div>
+      <p class="stores__note">Google&nbsp;Play — доступ к скачиванию откроется в&nbsp;ближайшее время</p>
+
+      <div class="qr-row" aria-label="QR-коды для установки на телефон">
+        <figure class="qr-card">
+          <img class="qr-card__img" src="assets/qr/appstore.png" alt="QR-код: установить Лапулю из App Store" width="120" height="120" loading="lazy">
+          <figcaption class="qr-card__cap">Наведи камеру — App&nbsp;Store</figcaption>
+        </figure>
+        <figure class="qr-card">
+          <img class="qr-card__img" src="assets/qr/rustore.png" alt="QR-код: установить Лапулю из RuStore" width="120" height="120" loading="lazy">
+          <figcaption class="qr-card__cap">Наведи камеру — RuStore</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+      <h2 class="section__title">Здоровье питомца под контролем</h2>
+      <p class="lead">
+        Лапуля помнит за тебя, когда питомцу пора прививку, обработку от&nbsp;паразитов,
+        лекарство или плановый визит к&nbsp;ветеринару. Заводишь кошку или собаку один
+        раз&nbsp;— и&nbsp;дальше приложение само считает персональные даты и&nbsp;напоминает заранее.
+      </p>
+      <p class="lead">
+        Не&nbsp;общая таблица из&nbsp;интернета, а&nbsp;<strong>личный план твоего животного</strong>.
+        Добавил питомца → Лапуля строит график по&nbsp;типовым схемам для кошек и&nbsp;собак →
+        напоминает за&nbsp;день-два → ты&nbsp;отмечаешь «сделано» → следующая дата
+        пересчитывается сама. Ничего не&nbsp;держишь в&nbsp;голове.
+      </p>
+      <p class="lead">
+        Особенно полезно новичкам: у&nbsp;щенка и&nbsp;котёнка самый плотный график первых
+        прививок и&nbsp;обработок&nbsp;— Лапуля ведёт тебя по&nbsp;нему шаг за&nbsp;шагом, чтобы
+        не&nbsp;было тревоги «а&nbsp;вдруг что-то пропустил».
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <h2 class="section__title">Что внутри</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Календарь прививок, обработок от&nbsp;паразитов и&nbsp;визитов к&nbsp;ветеринару</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Напоминания заранее — не&nbsp;пропустишь срок</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Ветпаспорт: вид, порода, возраст, вес и&nbsp;история ухода</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Фото и&nbsp;документы питомца под&nbsp;рукой, график веса</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Несколько питомцев в&nbsp;одном приложении</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Данные хранятся на&nbsp;твоём устройстве. Сейчас всё бесплатно</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Лапуля — органайзер и&nbsp;ветпаспорт, а&nbsp;не вет-служба.</strong> Она не&nbsp;заменяет
+        врача. Если питомцу плохо&nbsp;— сразу веди его к&nbsp;ветеринару. Все даты в&nbsp;приложении
+        можно править под рекомендацию своего врача.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer__legal">
+      <a href="privacy.html">Конфиденциальность</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Условия использования</a>
+    </p>
+    <p>Разработано студией <a href="https://fortonlab.ru/">Forton Lab</a></p>
+    <p>© 2026 Forton Lab · fortonlab.ru</p>
+  </footer>
+</body>
+</html>
