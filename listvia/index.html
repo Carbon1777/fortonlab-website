@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Листвия — уход за растениями офлайн</title>
+  <meta name="description" content="Листвия распознаёт растение офлайн по фото, ведёт персональный график полива и честно подсказывает, если растение заболело. Комнатные и дача, без интернета.">
+  <meta name="theme-color" content="#1F3A2B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fortonlab.ru/listvia/">
+  <meta property="og:title" content="Листвия — твои растения под присмотром">
+  <meta property="og:description" content="Распознаёт растение офлайн, ведёт персональный график ухода и честно диагностирует болезни. Комнатные и дача.">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png?v=2">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+
+  <!-- Yandex.Metrika counter (studio fortonlab) -->
+  <script type="text/javascript">
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();
+     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109268634", "ym");
+     ym(109268634, "init", {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109268634" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Yandex.Metrika goal: клик по стору на странице Листвии.
+       Сработает, когда стор-кнопки станут реальными ссылками (после публикации). -->
+  <script>
+  (function() {
+    var rules = [
+      ["rustore.ru/catalog/app/ru.fortonlab.listvia", "click_app_listvia"],
+      ["play.google.com/store/apps/details?id=ru.fortonlab.listvia", "click_app_listvia"],
+      ["apps.apple.com", "click_app_listvia"]
+    ];
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !window.ym) return;
+      var href = a.getAttribute('href') || '';
+      for (var i = 0; i < rules.length; i++) {
+        if (href.indexOf(rules[i][0]) !== -1) { ym(109268634, 'reachGoal', rules[i][1]); break; }
+      }
+    }, true);
+  })();
+  </script>
+
+  <style>
+    :root {
+      --bg: #1F3A2B;
+      --surface: #2A4A37;
+      --gold: #C7A86A;
+      --cream: #E6D9B0;
+      --leaf: #6E9460;
+      --text: #EDE7D6;
+      --text-muted: #B8C4B0;
+      --border: rgba(199, 168, 106, 0.22);
+      --radius: 18px;
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 0 20px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    main { max-width: 760px; margin: 0 auto; }
+
+    /* ---------- Hero ---------- */
+    .hero { text-align: center; padding: 56px 0 12px; }
+    .hero__icon {
+      width: 112px; height: 112px; margin: 0 auto 22px;
+      border-radius: 25%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--border);
+    }
+    .hero__name {
+      font-family: var(--serif);
+      font-size: clamp(40px, 8vw, 58px);
+      font-weight: 700; letter-spacing: 0.01em; line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .hero__tagline {
+      font-size: clamp(17px, 2.4vw, 20px);
+      color: var(--text-muted); font-weight: 500;
+      max-width: 480px; margin: 0 auto 28px;
+    }
+
+    /* ---------- Store buttons ---------- */
+    .stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 10px; }
+    .store-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 22px; border-radius: 14px;
+      font-size: 16px; font-weight: 600; letter-spacing: 0.01em;
+      text-decoration: none; border: 1px solid transparent;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    .store-btn__icon { width: 20px; height: 20px; flex-shrink: 0; }
+    .store-btn__icon--rustore {
+      display: inline-block; background-color: currentColor;
+      -webkit-mask: url('assets/rustore.png') center/contain no-repeat;
+              mask: url('assets/rustore.png') center/contain no-repeat;
+    }
+    .store-btn--soon {
+      background: var(--surface); color: var(--text-muted);
+      border: 1px solid var(--border); cursor: default; opacity: 0.9;
+    }
+    .stores__note {
+      font-size: 13px; color: var(--text-muted);
+      max-width: 420px; margin: 6px auto 26px; line-height: 1.5;
+    }
+
+    /* ---------- Content ---------- */
+    .section { padding: 40px 0; }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section__title {
+      font-family: var(--serif);
+      font-size: clamp(26px, 4vw, 34px); font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 18px; letter-spacing: 0.005em;
+    }
+    .lead { font-size: 18px; line-height: 1.65; margin-bottom: 16px; color: var(--text); }
+    .lead:last-child { margin-bottom: 0; }
+    .lead strong { font-weight: 600; color: var(--cream); }
+
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 8px; }
+    .feature {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px;
+    }
+    .feature__dot {
+      flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(110, 148, 96, 0.18); display: inline-flex; align-items: center; justify-content: center; margin-top: 1px;
+    }
+    .feature__dot svg { width: 15px; height: 15px; color: var(--gold); }
+    .feature__text { font-size: 15.5px; line-height: 1.5; color: var(--text); }
+
+    .callout {
+      background: rgba(110, 148, 96, 0.12); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px 24px; margin-top: 8px; font-size: 15.5px; line-height: 1.6; color: var(--text-muted);
+    }
+    .callout strong { color: var(--cream); }
+
+    /* ---------- Footer ---------- */
+    footer {
+      max-width: 760px; margin: 8px auto 0; padding: 36px 0 56px;
+      text-align: center; color: var(--text-muted); font-size: 14px; line-height: 1.7;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(199, 168, 106, 0.35); }
+    footer a:hover { border-bottom-color: var(--gold); }
+    .footer__legal { margin: 10px 0 6px; }
+    .footer__legal .sep { margin: 0 8px; opacity: 0.45; }
+
+    @media (max-width: 560px) {
+      body { font-size: 16px; padding: 0 16px; }
+      .hero { padding: 40px 0 8px; }
+      .features { grid-template-columns: 1fr; }
+      .store-btn { flex: 1 1 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- Hero -->
+    <header class="hero">
+      <img class="hero__icon" src="/assets/listvia-icon.png" alt="Листвия" width="112" height="112">
+      <h1 class="hero__name">Листвия</h1>
+      <p class="hero__tagline">Твои растения под присмотром. Распознаёт растение офлайн, ведёт персональный график ухода и честно подсказывает, если оно&nbsp;заболело.</p>
+
+      <div class="stores" aria-label="Магазины приложений">
+        <span class="store-btn store-btn--soon" role="img" aria-label="App Store — скоро">
+          <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          App&nbsp;Store
+        </span>
+        <span class="store-btn store-btn--soon" role="img" aria-label="RuStore — скоро">
+          <span class="store-btn__icon store-btn__icon--rustore" aria-hidden="true"></span>
+          RuStore
+        </span>
+        <span class="store-btn store-btn--soon" role="img" aria-label="Google Play — скоро">
+          <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.5 2.7c-.3.3-.5.8-.5 1.4v15.8c0 .6.2 1.1.5 1.4l8.4-8.6-8.4-10zM14 12.7l2.6 2.6 3.4-1.9c1-.6 1-2.1 0-2.7l-3.4-1.9-2.6 3.9zM13.1 13.6l-8.1 8.3c.4.1.8 0 1.3-.2l8.7-4.9-1.9-3.2zM13.1 11.8l1.9-3.2-8.7-4.9c-.5-.3-.9-.3-1.3-.2l8.1 8.3z"/>
+          </svg>
+          Google&nbsp;Play
+        </span>
+      </div>
+      <p class="stores__note">Скоро в&nbsp;App&nbsp;Store, RuStore и&nbsp;Google&nbsp;Play. Подпишись на&nbsp;<a href="https://t.me/fortonlab" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(199,168,106,0.35)">каналы студии</a>&nbsp;— узнаешь о&nbsp;запуске первым.</p>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+      <h2 class="section__title">Не определитель, а карманный садовник</h2>
+      <p class="lead">
+        Снимаешь незнакомое растение&nbsp;— Листвия <strong>распознаёт его прямо на&nbsp;телефоне,
+        без интернета</strong>&nbsp;— и&nbsp;сразу показывает, как за&nbsp;ним ухаживать. Работает даже
+        на&nbsp;даче, где связи нет.
+      </p>
+      <p class="lead">
+        Дальше начинается главное. Добавляешь растение в&nbsp;коллекцию, отмечаешь, где&nbsp;оно
+        стоит и&nbsp;в&nbsp;каком горшке&nbsp;— и&nbsp;Листвия строит <strong>персональный график
+        полива и&nbsp;ухода</strong>. Не&nbsp;«поливать раз в&nbsp;неделю из&nbsp;интернета», а&nbsp;расчёт под
+        твоё растение: свет, объём горшка, сезон. С&nbsp;осознанным запасом&nbsp;— лучше слегка
+        недолить, чем&nbsp;залить.
+      </p>
+      <p class="lead">
+        Растение заболело&nbsp;— снимаешь лист, и&nbsp;Листвия <strong>честно подсказывает,
+        что&nbsp;не&nbsp;так</strong>. Если уверенности нет&nbsp;— так и&nbsp;скажет, а&nbsp;не&nbsp;выдумает диагноз.
+        А&nbsp;для&nbsp;дачи ведёт культуры по&nbsp;фазам сезона с&nbsp;привязкой к&nbsp;заморозкам твоего региона.
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <h2 class="section__title">Что внутри</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Распознавание растений по&nbsp;фото&nbsp;— офлайн, прямо на&nbsp;устройстве</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Персональный график полива с&nbsp;учётом света, горшка и&nbsp;сезона</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Напоминания об&nbsp;уходе офлайн&nbsp;— полив, подкормка, пересадка</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Честная диагностика болезней по&nbsp;листу&nbsp;— без выдуманных диагнозов</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Дача-режим: культуры по&nbsp;фазам с&nbsp;привязкой к&nbsp;заморозкам региона</span>
+        </div>
+        <div class="feature">
+          <span class="feature__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="feature__text">Фото и&nbsp;данные остаются на&nbsp;твоём устройстве. Сейчас всё бесплатно</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Листвия&nbsp;— помощник, а&nbsp;не&nbsp;агроном.</strong> Диагностика подсказывает направление,
+        но&nbsp;не&nbsp;заменяет специалиста. Препараты применяй строго по&nbsp;инструкции на&nbsp;упаковке, а&nbsp;для
+        ценных растений и&nbsp;урожая советуйся с&nbsp;агрономом. Фотографии обрабатываются на&nbsp;телефоне
+        и&nbsp;не&nbsp;отправляются на&nbsp;сервер.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer__legal">
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Условия использования</a>
+    </p>
+    <p>Поддержка: <a href="mailto:support@fortonlab.ru">support@fortonlab.ru</a></p>
+    <p>Разработано студией <a href="https://fortonlab.ru/">Forton Lab</a></p>
+    <p>© 2026 Forton Lab · fortonlab.ru</p>
+  </footer>
+</body>
+</html>
