@@ -266,20 +266,139 @@ main {
 }
 
 /* ============================================================
-   4. Soon
+   4. Community / каналы студии
    ============================================================ */
 
-.soon {
+.community {
   text-align: center;
-  padding: 60px 0 16px;
+  padding: 56px 0 24px;
 }
 
-.soon p {
-  font-size: 18px;
+.community__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.community__sub {
+  font-size: clamp(14px, 1.6vw, 17px);
   color: var(--text-muted);
-  max-width: 520px;
-  margin: 0 auto;
+  max-width: 560px;
+  margin: 14px auto 32px;
   line-height: 1.6;
+}
+
+.community__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.channel:hover,
+.channel:focus-visible {
+  box-shadow: 0 0 24px rgba(212, 166, 64, 0.12);
+  border-color: rgba(212, 166, 64, 0.35);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.channel:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+.channel--featured {
+  max-width: 640px;
+  margin: 0 auto 14px;
+  border-color: var(--gold);
+}
+
+.channel__badge {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel__badge svg {
+  width: 26px;
+  height: 26px;
+}
+
+.channel__badge--tg { background: #229ED9; color: #fff; }
+.channel__badge--vk { background: #0077FF; color: #fff; }
+.channel__badge--yt { background: #FF0000; color: #fff; }
+.channel__badge--dzen { background: #0A0A0A; color: var(--gold-bright); }
+.channel__badge--rt { background: #14B8B8; color: #06201F; }
+
+.channel__body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.channel__name {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--gold-bright);
+}
+
+.channel__live {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #7FCF9A;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.channel__live::before {
+  content: "\25CF";
+  font-size: 8px;
+  vertical-align: 2px;
+  margin-right: 4px;
+}
+
+.channel__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.channel__arrow {
+  flex: 0 0 auto;
+  color: var(--gold-dark);
+  font-size: 20px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.channel:hover .channel__arrow,
+.channel:focus-visible .channel__arrow {
+  color: var(--gold-bright);
+  transform: translateX(3px);
 }
 
 /* ============================================================
@@ -292,47 +411,6 @@ main {
   align-items: center;
   gap: 24px;
   padding: 12px 0 60px;
-}
-
-.footer__divider {
-  width: 240px;
-  height: 1px;
-  background: var(--border);
-}
-
-.footer__channels {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.footer__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  color: var(--gold);
-  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-}
-
-.footer__link svg {
-  width: 40px;
-  height: 40px;
-}
-
-.footer__link:hover,
-.footer__link:focus-visible {
-  color: var(--gold-bright);
-  background: rgba(212, 166, 64, 0.06);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-.footer__link:focus-visible {
-  outline: 2px solid var(--gold-bright);
-  outline-offset: 2px;
 }
 
 .footer__email {
@@ -456,30 +534,20 @@ main {
     align-self: center;
   }
 
-  .soon {
-    padding: 40px 0 12px;
+  .community {
+    padding: 40px 0 16px;
   }
 
-  .soon p {
-    font-size: 16px;
+  .community__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .channel {
+    padding: 14px 16px;
   }
 
   .footer {
     padding: 8px 0 48px;
-  }
-
-  .footer__channels {
-    gap: 28px;
-  }
-
-  .footer__link {
-    width: 48px;
-    height: 48px;
-  }
-
-  .footer__link svg {
-    width: 34px;
-    height: 34px;
   }
 
 }
