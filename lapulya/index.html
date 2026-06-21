@@ -32,7 +32,8 @@
   (function() {
     var rules = [
       ["id6776284817", "click_app_lapulya"],
-      ["rustore.ru/catalog/app/ru.fortonlab.lapulya", "click_app_lapulya"]
+      ["rustore.ru/catalog/app/ru.fortonlab.lapulya", "click_app_lapulya"],
+      ["play.google.com/store/apps/details?id=ru.fortonlab.lapulya", "click_app_lapulya"]
     ];
     document.addEventListener('click', function(e) {
       var a = e.target.closest && e.target.closest('a[href]');
@@ -198,14 +199,13 @@
           <span class="store-btn__icon store-btn__icon--rustore" aria-hidden="true"></span>
           RuStore
         </a>
-        <span class="store-btn store-btn--soon" role="img" aria-label="Google Play — скоро">
+        <a class="store-btn store-btn--primary" href="https://play.google.com/store/apps/details?id=ru.fortonlab.lapulya" target="_blank" rel="noopener noreferrer">
           <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.5 2.7c-.3.3-.5.8-.5 1.4v15.8c0 .6.2 1.1.5 1.4l8.4-8.6-8.4-10zM14 12.7l2.6 2.6 3.4-1.9c1-.6 1-2.1 0-2.7l-3.4-1.9-2.6 3.9zM13.1 13.6l-8.1 8.3c.4.1.8 0 1.3-.2l8.7-4.9-1.9-3.2zM13.1 11.8l1.9-3.2-8.7-4.9c-.5-.3-.9-.3-1.3-.2l8.1 8.3z"/>
           </svg>
           Google&nbsp;Play
-        </span>
+        </a>
       </div>
-      <p class="stores__note">Google&nbsp;Play — доступ к скачиванию откроется в&nbsp;ближайшее время</p>
 
       <div class="qr-row" aria-label="QR-коды для установки на телефон">
         <figure class="qr-card">
@@ -215,6 +215,10 @@
         <figure class="qr-card">
           <img class="qr-card__img" src="assets/qr/rustore.png" alt="QR-код: установить Лапулю из RuStore" width="120" height="120" loading="lazy">
           <figcaption class="qr-card__cap">Наведи камеру — RuStore</figcaption>
+        </figure>
+        <figure class="qr-card">
+          <img class="qr-card__img" src="assets/qr/googleplay.png" alt="QR-код: установить Лапулю из Google Play" width="120" height="120" loading="lazy">
+          <figcaption class="qr-card__cap">Наведи камеру — Google&nbsp;Play</figcaption>
         </figure>
       </div>
     </header>
