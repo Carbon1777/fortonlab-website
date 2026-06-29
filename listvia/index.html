@@ -116,6 +116,11 @@
       -webkit-mask: url('assets/rustore.png') center/contain no-repeat;
               mask: url('assets/rustore.png') center/contain no-repeat;
     }
+    .store-btn--primary {
+      background: var(--gold); color: #1F2E22;
+      box-shadow: 0 8px 22px rgba(199, 168, 106, 0.22);
+    }
+    .store-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(199, 168, 106, 0.34); }
     .store-btn--soon {
       background: var(--surface); color: var(--text-muted);
       border: 1px solid var(--border); cursor: default; opacity: 0.9;
@@ -124,6 +129,16 @@
       font-size: 13px; color: var(--text-muted);
       max-width: 420px; margin: 6px auto 26px; line-height: 1.5;
     }
+
+    /* ---------- QR (web only) ---------- */
+    .qr-row { display: flex; justify-content: center; gap: 24px; margin: 6px 0 8px; }
+    .qr-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .qr-card__img {
+      width: 120px; height: 120px; padding: 8px;
+      background: #fff; border-radius: 14px; border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    .qr-card__cap { font-size: 12.5px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.02em; }
 
     /* ---------- Content ---------- */
     .section { padding: 40px 0; }
@@ -167,6 +182,9 @@
     .footer__legal { margin: 10px 0 6px; }
     .footer__legal .sep { margin: 0 8px; opacity: 0.45; }
 
+    @media (max-width: 768px) {
+      .qr-row { display: none; } /* QR — только в вебе/десктопе */
+    }
     @media (max-width: 560px) {
       body { font-size: 16px; padding: 0 16px; }
       .hero { padding: 40px 0 8px; }
@@ -184,25 +202,36 @@
       <h1 class="hero__name">Листвия</h1>
       <p class="hero__tagline">Твои растения под присмотром. Каталог растений, персональный график ухода под твоё растение и честная диагностика&nbsp;— когда что-то не&nbsp;так.</p>
 
-      <div class="stores" aria-label="Магазины приложений">
-        <span class="store-btn store-btn--soon" role="img" aria-label="App Store — скоро">
+      <div class="stores" aria-label="Скачать в магазинах приложений">
+        <a class="store-btn store-btn--primary" href="https://apps.apple.com/ru/app/id6784724566" target="_blank" rel="noopener noreferrer">
           <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
           </svg>
           App&nbsp;Store
-        </span>
-        <span class="store-btn store-btn--soon" role="img" aria-label="RuStore — скоро">
+        </a>
+        <a class="store-btn store-btn--primary" href="https://www.rustore.ru/catalog/app/ru.fortonlab.listvia" target="_blank" rel="noopener noreferrer">
           <span class="store-btn__icon store-btn__icon--rustore" aria-hidden="true"></span>
           RuStore
-        </span>
+        </a>
         <span class="store-btn store-btn--soon" role="img" aria-label="Google Play — скоро">
           <svg class="store-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.5 2.7c-.3.3-.5.8-.5 1.4v15.8c0 .6.2 1.1.5 1.4l8.4-8.6-8.4-10zM14 12.7l2.6 2.6 3.4-1.9c1-.6 1-2.1 0-2.7l-3.4-1.9-2.6 3.9zM13.1 13.6l-8.1 8.3c.4.1.8 0 1.3-.2l8.7-4.9-1.9-3.2zM13.1 11.8l1.9-3.2-8.7-4.9c-.5-.3-.9-.3-1.3-.2l8.1 8.3z"/>
           </svg>
-          Google&nbsp;Play
+          Google&nbsp;Play&nbsp;· скоро
         </span>
       </div>
-      <p class="stores__note">Скоро в&nbsp;App&nbsp;Store, RuStore и&nbsp;Google&nbsp;Play. Подпишись на&nbsp;<a href="https://t.me/fortonlab" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(199,168,106,0.35)">каналы студии</a>&nbsp;— узнаешь о&nbsp;запуске первым.</p>
+
+      <div class="qr-row" aria-label="QR-коды для установки на телефон">
+        <figure class="qr-card">
+          <img class="qr-card__img" src="assets/qr/appstore.png" alt="QR-код: установить Листвию из App Store" width="120" height="120" loading="lazy">
+          <figcaption class="qr-card__cap">Наведи камеру — App&nbsp;Store</figcaption>
+        </figure>
+        <figure class="qr-card">
+          <img class="qr-card__img" src="assets/qr/rustore.png" alt="QR-код: установить Листвию из RuStore" width="120" height="120" loading="lazy">
+          <figcaption class="qr-card__cap">Наведи камеру — RuStore</figcaption>
+        </figure>
+      </div>
+      <p class="stores__note">Уже доступна в&nbsp;App&nbsp;Store и&nbsp;RuStore. В&nbsp;Google&nbsp;Play&nbsp;— скоро, идёт тестирование. Подпишись на&nbsp;<a href="https://t.me/fortonlab" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(199,168,106,0.35)">каналы студии</a>&nbsp;— узнаешь о&nbsp;запуске в&nbsp;Google&nbsp;Play первым.</p>
     </header>
 
     <!-- About -->
