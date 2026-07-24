@@ -101,10 +101,13 @@
     }
 
     /* ---------- Store buttons ---------- */
-    .stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 10px; }
+    .stores {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      max-width: 540px; margin: 0 auto 10px;
+    }
     .store-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 13px 22px; border-radius: 14px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 13px 16px; border-radius: 14px;
       font-size: 16px; font-weight: 600; letter-spacing: 0.01em;
       text-decoration: none; border: 1px solid transparent;
       transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
@@ -131,7 +134,10 @@
     }
 
     /* ---------- QR (web only) ---------- */
-    .qr-row { display: flex; justify-content: center; gap: 24px; margin: 6px 0 8px; }
+    .qr-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      max-width: 540px; margin: 6px auto 8px;
+    }
     .qr-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .qr-card__img {
       width: 120px; height: 120px; padding: 8px;
@@ -189,7 +195,7 @@
       body { font-size: 16px; padding: 0 16px; }
       .hero { padding: 40px 0 8px; }
       .features { grid-template-columns: 1fr; }
-      .store-btn { flex: 1 1 100%; justify-content: center; }
+      .stores { grid-template-columns: 1fr; }
     }
   </style>
 </head>
