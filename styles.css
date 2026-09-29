@@ -265,6 +265,60 @@ main {
   outline-offset: 3px;
 }
 
+/* ----- Продукт на доработке: плашка + неактивная кнопка ----- */
+
+.product__notice {
+  flex: 0 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  border: 1px solid rgba(212, 166, 64, 0.35);
+  border-radius: 12px;
+  background: rgba(212, 166, 64, 0.06);
+}
+
+.product__notice-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.product__notice-title::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  box-shadow: 0 0 8px rgba(244, 199, 87, 0.7);
+}
+
+.product__notice-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.product--paused .product__icon {
+  filter: saturate(0.55) brightness(0.85);
+}
+
+.product__cta--disabled,
+.product__cta--disabled:hover {
+  border-color: var(--text-muted);
+  background: transparent;
+  color: var(--text-muted);
+  opacity: 0.45;
+  cursor: not-allowed;
+  user-select: none;
+}
+
 /* ============================================================
    4. Community / каналы студии
    ============================================================ */
@@ -549,6 +603,12 @@ main {
   .product__cta,
   .product--right .product__cta {
     align-self: center;
+  }
+
+  .product__notice {
+    flex-basis: auto;
+    width: 100%;
+    text-align: left;
   }
 
   .community {
