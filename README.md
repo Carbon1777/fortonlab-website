@@ -31,7 +31,6 @@ fortonlab-website/
 ├── favicon.svg       # фавикон (упрощённая печать)
 ├── assets/
 │   ├── seal.png      # печать FORTONLAB (hero-логотип)
-│   ├── centry-icon.png
 │   ├── diktum-icon.png
 │   └── og.png        # 1200×630 для шеринга в соцсетях
 └── README.md
